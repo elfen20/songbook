@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chord.cs" />
     <Compile Include="Key.cs" />
+    <Compile Include="SongBlock.cs" />
     <Compile Include="Scale.cs" />
     <Compile Include="Tonic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,9 +4,9 @@ namespace SongBook
 {
     public struct Key
     {
-        public Tonic tonic;
-        public Scale scale;
-        public string suffix;
+        public Tonic Tonic;
+        public Scale Scale;
+        public string Suffix;
 
         public static Key Parse(string s)
         {
@@ -23,9 +23,9 @@ namespace SongBook
 
         public override string ToString()
         {
-            string t = tonic.ToString().Replace('s', '#');
-            if (scale == Scale.Minor) t = t + 'm';
-            return $"{t}{suffix}";
+            string t = Tonic.ToString().Replace('s', '#');
+            if (Scale == Scale.Minor) t = t + 'm';
+            return $"{t}{Suffix}";
         }
     }
 }
