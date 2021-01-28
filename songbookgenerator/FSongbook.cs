@@ -17,10 +17,15 @@ namespace SongBook
             InitializeComponent();
         }
 
+        private void Log(string s)
+        {
+            tbInfo.AppendText($"{DateTime.Now:hh:mm:ss.fff} : {s}" + Environment.NewLine);
+        }
+
         private void bStart_Click(object sender, EventArgs e)
         {
             Key mykey = default;
-            tbInfo.Text = mykey.ToString();
+            Log(mykey.ToString());
         }
     }
 }

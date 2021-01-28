@@ -39,8 +39,11 @@ namespace SongBook
             this.tbInfo.Location = new System.Drawing.Point(0, 300);
             this.tbInfo.Multiline = true;
             this.tbInfo.Name = "tbInfo";
+            this.tbInfo.ReadOnly = true;
+            this.tbInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbInfo.Size = new System.Drawing.Size(803, 240);
             this.tbInfo.TabIndex = 0;
+            this.tbInfo.WordWrap = false;
             // 
             // bStart
             // 
