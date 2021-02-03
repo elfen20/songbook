@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "songbookgenerator", "songbo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "songbooklib", "songbooklib\songbooklib.csproj", "{9E58A197-B1A5-40FD-A09D-CE8C89E9D6C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebView", "WebView\WebView.csproj", "{19124179-C859-440C-859E-2689DAC40627}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9E58A197-B1A5-40FD-A09D-CE8C89E9D6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E58A197-B1A5-40FD-A09D-CE8C89E9D6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E58A197-B1A5-40FD-A09D-CE8C89E9D6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19124179-C859-440C-859E-2689DAC40627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19124179-C859-440C-859E-2689DAC40627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19124179-C859-440C-859E-2689DAC40627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19124179-C859-440C-859E-2689DAC40627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
