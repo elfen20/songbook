@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cave.Extensions, Version=2.0.10.0, Culture=neutral, PublicKeyToken=65480c9a544d67e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cave.Extensions.2.0.10\lib\net45\Cave.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Cave.IniFile, Version=2.0.1.0, Culture=neutral, PublicKeyToken=4d9836157ab28f9f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cave.IniFile.2.0.1\lib\net45\Cave.IniFile.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,6 +72,7 @@
     <EmbeddedResource Include="WebView.resx">
       <DependentUpon>WebView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="template\template.css" />
+    <Content Include="template\template.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
