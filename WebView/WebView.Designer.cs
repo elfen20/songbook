@@ -42,6 +42,9 @@ namespace WebView
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabpView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scView)).BeginInit();
@@ -111,6 +114,7 @@ namespace WebView
             // tbSongtext
             // 
             this.tbSongtext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSongtext.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSongtext.Location = new System.Drawing.Point(0, 0);
             this.tbSongtext.Multiline = true;
             this.tbSongtext.Name = "tbSongtext";
@@ -149,6 +153,7 @@ namespace WebView
             // tbHtml
             // 
             this.tbHtml.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbHtml.Font = new System.Drawing.Font("Consolas", 10F);
             this.tbHtml.Location = new System.Drawing.Point(0, 0);
             this.tbHtml.Multiline = true;
             this.tbHtml.Name = "tbHtml";
@@ -159,6 +164,7 @@ namespace WebView
             // tbCss
             // 
             this.tbCss.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbCss.Font = new System.Drawing.Font("Consolas", 10F);
             this.tbCss.Location = new System.Drawing.Point(0, 0);
             this.tbCss.Multiline = true;
             this.tbCss.Name = "tbCss";
@@ -188,6 +194,10 @@ namespace WebView
             // 
             // dateiToolStripMenuItem
             // 
+            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFileToolStripMenuItem,
+            this.saveFileToolStripMenuItem,
+            this.saveTemplateToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
@@ -197,6 +207,25 @@ namespace WebView
             this.doToolStripMenuItem.Name = "doToolStripMenuItem";
             this.doToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
             this.doToolStripMenuItem.Text = "Do";
+            // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openFileToolStripMenuItem.Text = "Open File";
+            // 
+            // saveFileToolStripMenuItem
+            // 
+            this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveFileToolStripMenuItem.Text = "Save File";
+            // 
+            // saveTemplateToolStripMenuItem
+            // 
+            this.saveTemplateToolStripMenuItem.Name = "saveTemplateToolStripMenuItem";
+            this.saveTemplateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveTemplateToolStripMenuItem.Text = "Save Template";
+            this.saveTemplateToolStripMenuItem.Click += new System.EventHandler(this.saveTemplateToolStripMenuItem_Click);
             // 
             // WebView
             // 
@@ -245,6 +274,9 @@ namespace WebView
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveTemplateToolStripMenuItem;
     }
 }
 

@@ -15,10 +15,16 @@ namespace WebView
     public partial class WebView : Form
     {
         const string SETTINGSFILE = "config.ini";
+        readonly WVSettings wvSettings;
 
         public WebView()
         {
             InitializeComponent();
+            if (!File.Exists(SETTINGSFILE))
+            {
+                Log("config.ini not found!");
+            }
+            wvSettings = WVSettings.FromFile(SETTINGSFILE);
             Init();
             Log("Ready");
         }
@@ -30,31 +36,29 @@ namespace WebView
 
         void Init()
         {
-            if (!File.Exists(SETTINGSFILE))
+            if (File.Exists(wvSettings.HtmlTemplateFile))
             {
-                Log("config.ini not found!");
-            }
-
-            var reader = IniReader.FromFile(SETTINGSFILE);
-            string s = reader.ReadString("Files", "HtmlTemplate", "../../template/template.html");
-            if (File.Exists(s))
-            {
-                tbHtml.Lines = File.ReadAllLines(s);
+                tbHtml.Lines = File.ReadAllLines(wvSettings.HtmlTemplateFile);
             }
             else
             {
                 Log("html template not found!");
             }
 
-            s = reader.ReadString("Files", "CssTemplate", "../../template/template.css");
-            if (File.Exists(s))
+            if (File.Exists(wvSettings.CssTemplateFile))
             {
-                tbCss.Lines = File.ReadAllLines(s);
+                tbCss.Lines = File.ReadAllLines(wvSettings.CssTemplateFile);
             }
             else
             {
                 Log("css template not found!");
             }
+        }
+
+        private void saveTemplateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(wvSettings.HtmlTemplateFile, tbHtml.Text);
+            File.WriteAllText(wvSettings.CssTemplateFile, tbCss.Text);
         }
     }
 }
