@@ -1,0 +1,48 @@
+﻿1) Group in Blocks.
+	Block are defined when first char in line is # till next line with # or end of file.
+	a control char directly following the # sets the block type.
+	Blocks can have a name after the control chars, separated by space.
+	Defined Blocks:
+	
+	# Name
+		generic song block. can contain chords, lyrics or both. blocks can be redefined.
+		
+	#! Songname
+		meta info block. contains settings in key=value format.
+		
+	#/ Text
+		Comment block. will be ignored.
+	
+	#+ Name
+		repeat block. inserts previous defined block on this position.
+		
+	#_ 
+		inserts a blank line or paragraph.
+
+2) Blocks
+	first line has to start with a '#'. seperated by space an optional block name to refer to later.
+	
+	lines starting with ' are chord lines.
+	lines starting with space will have the first space stripped off.
+	lines with white space will be ignored.
+	all other lines are text lines.
+	^ in a text line indicates a chord position which will be inserted from a previously defined block.
+
+3) Chords
+	chords can be defined in two ways: double line or inline style.
+	double line style:
+		first line has to start with a '
+		text will be parsed as chords 
+		second line has text.
+	inline style:
+		each line will be parsed for square brackets [] which will contain the chord(s)
+
+4) Meta Block
+	defines meta information in key=value lines.
+	meta keys:
+		aname:		alternative song name
+		capo:		use this to hint the use of a capodaster
+		trans:		transpose the chords in this song
+		ref:		additional song references in books [bockname,page]
+
+Ideas:

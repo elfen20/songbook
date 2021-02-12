@@ -88,6 +88,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="format\draft.txt" />
+    <Content Include="format\sample.txt" />
     <Content Include="template\template.css" />
     <Content Include="template\template.html" />
   </ItemGroup>

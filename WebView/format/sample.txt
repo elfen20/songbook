@@ -1,0 +1,21 @@
+﻿#! Sample Song
+aname=start with
+ref=adler,25
+capo=+5
+trans=+2
+
+#/ Intro
+
+# Intro
+' C D G
+
+# Intro 2
+[am em dm]
+
+# Strophe
+' C  D F
+ Lied text
+
+# Strophe
+Ne^uer Te^xt
+
