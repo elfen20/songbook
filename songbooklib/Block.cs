@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace SongBook
 {
-    public class SongBlock
+    public class Block
     {
         public readonly List<Chord> Chords;
         public readonly List<int> Breaks;
         public string Text;
 
-        public SongBlock()
+        public Block()
         {
             Chords = new List<Chord>();
             Text = "";
         }
 
 
-        public static SongBlock ParseInLine(string line)
+        public static Block ParseInLine(string line)
         {
-            return new SongBlock();
+            return new Block();
         }
 
-        public static SongBlock ParseDoubleLine(string chords, string line)
+        public static Block ParseDoubleLine(string chords, string line)
         {
-            return new SongBlock();
+            return new Block();
         }
 
     }
