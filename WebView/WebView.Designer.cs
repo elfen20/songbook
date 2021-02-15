@@ -41,10 +41,10 @@ namespace WebView
             this.tbLog = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.doToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabpView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scView)).BeginInit();
@@ -202,30 +202,30 @@ namespace WebView
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
-            // doToolStripMenuItem
-            // 
-            this.doToolStripMenuItem.Name = "doToolStripMenuItem";
-            this.doToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
-            this.doToolStripMenuItem.Text = "Do";
-            // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.openFileToolStripMenuItem.Text = "Open File";
             // 
             // saveFileToolStripMenuItem
             // 
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.saveFileToolStripMenuItem.Text = "Save File";
             // 
             // saveTemplateToolStripMenuItem
             // 
             this.saveTemplateToolStripMenuItem.Name = "saveTemplateToolStripMenuItem";
-            this.saveTemplateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveTemplateToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.saveTemplateToolStripMenuItem.Text = "Save Template";
             this.saveTemplateToolStripMenuItem.Click += new System.EventHandler(this.saveTemplateToolStripMenuItem_Click);
+            // 
+            // doToolStripMenuItem
+            // 
+            this.doToolStripMenuItem.Name = "doToolStripMenuItem";
+            this.doToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
+            this.doToolStripMenuItem.Text = "Do";
             // 
             // WebView
             // 
@@ -238,6 +238,7 @@ namespace WebView
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "WebView";
             this.Text = "Songbook WebView";
+            this.Shown += new System.EventHandler(this.WebView_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabpView.ResumeLayout(false);
             this.scView.Panel1.ResumeLayout(false);

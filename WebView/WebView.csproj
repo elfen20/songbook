@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cave.Extensions, Version=2.0.10.0, Culture=neutral, PublicKeyToken=65480c9a544d67e6, processorArchitecture=MSIL">
       <HintPath>..\packages\Cave.Extensions.2.0.10\lib\net45\Cave.Extensions.dll</HintPath>
@@ -92,6 +95,12 @@
     <Content Include="format\sample.txt" />
     <Content Include="template\template.css" />
     <Content Include="template\template.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\songbooklib\songbooklib.csproj">
+      <Project>{9e58a197-b1a5-40fd-a09d-ce8c89e9d6c3}</Project>
+      <Name>songbooklib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

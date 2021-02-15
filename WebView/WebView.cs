@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SongBook;
 
 namespace WebView
 {
@@ -53,12 +54,33 @@ namespace WebView
             {
                 Log("css template not found!");
             }
+
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.Length > 1)
+            {
+                if (File.Exists(args[1]))
+                {
+                    tbSongtext.Text = File.ReadAllText(args[1]);
+                }
+            }
+
         }
 
         private void saveTemplateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             File.WriteAllText(wvSettings.HtmlTemplateFile, tbHtml.Text);
             File.WriteAllText(wvSettings.CssTemplateFile, tbCss.Text);
+        }
+
+        private void Do()
+        {
+            var song = Song.FromText(tbSongtext.Text);
+
+        }
+
+        private void WebView_Shown(object sender, EventArgs e)
+        {
+            Do();
         }
     }
 }
