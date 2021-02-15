@@ -6,27 +6,54 @@ using System.Threading.Tasks;
 
 namespace SongBook
 {
-    public class Block
+    public abstract class Block : IBlock
     {
-        public readonly List<Chord> Chords;
-        public readonly List<int> Breaks;
-        public string Text;
+        public BlockType Type { get; }
 
-        public Block()
+        public string Name { get; }
+
+        public string[] Lines { get; }
+
+        public Block(string name, string[] lines)
         {
-            Chords = new List<Chord>();
-            Text = "";
+            Type = BlockType.Text;
+            Name = name;
+            Lines = lines;
         }
 
 
-        public static Block ParseInLine(string line)
+        public string ToText()
         {
-            return new Block();
+            throw new NotImplementedException();
         }
 
-        public static Block ParseDoubleLine(string chords, string line)
+        public string GetHeader()
         {
-            return new Block();
+            return $"#{GetBlockTypeChar(Type)} {Name}";
+        }
+
+
+        public static string GetBlockTypeChar(BlockType btype)
+        {
+            switch(btype)
+            {
+                case BlockType.Blank:
+                    return "_";
+                case BlockType.Comment:
+                    return "/";
+                case BlockType.Repeat:
+                    return "+";
+                case BlockType.Meta:
+                    return "!";
+            }
+            return string.Empty;
+        }
+
+        public static bool TryGetBlockType(string line, out BlockType type, out string name)
+        {
+            type = BlockType.Text;
+            name = String.Empty;
+            return false;
         }
 
     }

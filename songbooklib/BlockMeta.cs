@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace SongBook
 {
-    public enum BlockType
+    class BlockMeta
     {
-        Text,
-        Meta,
-        Comment,
-        Repeat,
-        Blank
     }
-
 }
