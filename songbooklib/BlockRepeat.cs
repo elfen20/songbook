@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SongBook
 {
-    class BlockRepeat
+    class BlockRepeat : Block
     {
+        public BlockRepeat(string name, string[] lines) : base(BlockType.Repeat, name, lines)
+        {
+        }
     }
 }

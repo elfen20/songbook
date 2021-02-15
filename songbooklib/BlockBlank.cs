@@ -6,20 +6,10 @@ using System.Threading.Tasks;
 
 namespace SongBook
 {
-    public class BlockBlank : IBlock
+    public class BlockBlank : Block
     {
-        public BlockType Type { get; }
-        public string Name { get; }
-        public string[] Lines { get; }
-
-        public BlockBlank()
+        public BlockBlank(string name, string[] lines) : base(BlockType.Blank, name, lines)
         {
-
-        }
-
-        public string ToText()
-        {
-            throw new NotImplementedException();
         }
     }
 }

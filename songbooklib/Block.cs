@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cave;
 
 namespace SongBook
 {
@@ -14,9 +15,9 @@ namespace SongBook
 
         public string[] Lines { get; }
 
-        public Block(string name, string[] lines)
+        public Block(BlockType type, string name, string[] lines)
         {
-            Type = BlockType.Text;
+            Type = type;
             Name = name;
             Lines = lines;
         }
@@ -24,7 +25,10 @@ namespace SongBook
 
         public string ToText()
         {
-            throw new NotImplementedException();
+            var list = new List<string>();
+            list.Add(GetHeader());
+            list.AddRange(Lines);
+            return StringExtensions.JoinNewLine(list);
         }
 
         public string GetHeader()
@@ -33,9 +37,9 @@ namespace SongBook
         }
 
 
-        public static string GetBlockTypeChar(BlockType btype)
+        public static string GetBlockTypeChar(BlockType type)
         {
-            switch(btype)
+            switch(type)
             {
                 case BlockType.Blank:
                     return "_";
@@ -49,11 +53,72 @@ namespace SongBook
             return string.Empty;
         }
 
+        public static IBlock Parse(string[] text)
+        {
+            if ((text?.Length > 0) && TryGetBlockType(text[0], out var type, out var name))
+            {
+                string[] lines = text.Skip(1).ToArray();
+
+                switch(type)
+                {
+                    case BlockType.Blank:
+                        return new BlockBlank(name, lines);
+                    case BlockType.Comment:
+                        return new BlockComment(name, lines);
+                    case BlockType.Repeat:
+                        return new BlockRepeat(name, lines);
+                    case BlockType.Meta:
+                        return new BlockMeta(name, lines);
+                    default:
+                        return new BlockText(name, lines);
+                }
+            }
+            else
+            {
+                return new BlockComment("invalid");
+            }
+        }
+
         public static bool TryGetBlockType(string line, out BlockType type, out string name)
         {
             type = BlockType.Text;
-            name = String.Empty;
-            return false;
+            name = string.Empty;
+            if ((line?.Length > 0) && line[0] == '#')
+            {
+                if (line.Length > 1)
+                {
+                    switch (line[1])
+                    {
+                        case '_':
+                            type = BlockType.Blank;
+                            break;
+                        case '/':
+                            type = BlockType.Comment;
+                            break;
+                        case '+':
+                            type = BlockType.Repeat;
+                            break;
+                        case '!':
+                            type = BlockType.Meta;
+                            break;
+                    }
+                }
+                var split = line.Split(' ');
+                if (split.Length > 1)
+                {
+                    name = split[1];
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"[{Type}] {Name}";
         }
 
     }

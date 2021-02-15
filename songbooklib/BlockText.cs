@@ -6,28 +6,14 @@ using System.Threading.Tasks;
 
 namespace SongBook
 {
-    public class BlockText
+    public class BlockText : Block
     {
         public readonly List<Chord> Chords;
         public readonly List<int> Breaks;
         public string Text;
 
-        public BlockText()
+        public BlockText(string name, string[] lines) : base(BlockType.Text, name, lines)
         {
-            Chords = new List<Chord>();
-            Text = "";
         }
-
-
-        public static BlockText ParseInLine(string line)
-        {
-            return new BlockText();
-        }
-
-        public static BlockText ParseDoubleLine(string chords, string line)
-        {
-            return new BlockText();
-        }
-
     }
 }

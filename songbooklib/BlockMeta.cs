@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SongBook
 {
-    class BlockMeta
+    class BlockMeta : Block
     {
+        public BlockMeta(string name, string[] lines) : base(BlockType.Meta, name, lines)
+        {
+        }
     }
 }

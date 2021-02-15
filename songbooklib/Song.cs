@@ -31,12 +31,9 @@ namespace SongBook
                 {
                     if ((linepos - blockstart) > 0)
                     {
-                        string[] lin = lines.GetRange(blockstart, linepos - blockstart);
-                        if (Block.TryGetBlockType(lin[0], out var type, out var name))
-                        {
-
-                        }
-                        // parse block
+                        string[] blocklines = lines.GetRange(blockstart, linepos - blockstart);
+                        song.Blocks.Add(Block.Parse(blocklines));
+                        
                     }
                     blockstart = linepos;
                 }
